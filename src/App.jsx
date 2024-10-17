@@ -1,4 +1,6 @@
+import Card from "./components/Card";
 import Content from "./components/Content";
+import EventHandler from "./components/EventHandler";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
@@ -46,10 +48,13 @@ function App({ title, num1, num2, content }) {
     },
   ];
 
+
+ 
+
   return (
     <>
       <Header />
-      <div className="container mt-3">
+      <div className="container mt-3 mb-5">
         <h1 style={{ color: "red", backgroundColor: "pink", padding: "10px" }}>
           {title}
         </h1>
@@ -70,15 +75,34 @@ function App({ title, num1, num2, content }) {
         {loggin === true ? "OK" : "Not OK"}
 
         {people.map((row, k) => (
-          <div className="card" key={row.id}>
-            <div className="card-body">
-              {row.id}
-              <p>{row.name}</p>
-              <p>{row.profession}</p>
-            </div>
-          </div>
+         <Card record={row} />
         ))}
+
+
+
+
+        <hr />
+
+
+        
+
       </div>
+
+      <div className="container mb-5 mt-2">
+        <h2>Events</h2>
+        <EventHandler />
+      </div>
+
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
+     <br />
 
       {/* <Footer name="Encoder Technologies" year="2024" /> */}
     </>

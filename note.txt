@@ -26,3 +26,9 @@
         name: 'Subrahmanyan Chandrasekhar',
         profession: 'astrophysicist',
     }];
+
+
+
+    #day4
+    1. Event handler 
+    2. Hooks (state management)
