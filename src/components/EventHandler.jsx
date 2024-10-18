@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 function EventHandler() {
 
@@ -13,7 +13,17 @@ function EventHandler() {
     })
 
 
-    console.log(student)
+    useEffect(()=>{
+        console.log('Effected', count)
+        // console.log("OK effect")
+        // console.log("OK effect", student)
+
+    },[count])
+
+    
+
+
+    
 
     function demo(){
         setCount(count + 1)

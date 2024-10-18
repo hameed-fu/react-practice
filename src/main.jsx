@@ -5,10 +5,13 @@ import App from './App.jsx'
  
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
+import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App title="React Tuturials" num1={20} num2={30} content="React Code"  />
-   
+
+    <BrowserRouter>
+        <App title="React Tuturials" num1={20} num2={30} content="React Code"  />
+    </BrowserRouter>
   </StrictMode>,
 )

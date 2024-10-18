@@ -1,9 +1,13 @@
+import { Route, Routes } from "react-router-dom";
 import Card from "./components/Card";
 import Content from "./components/Content";
 import EventHandler from "./components/EventHandler";
 import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
 
 function App({ title, num1, num2, content }) {
   let data = {
@@ -54,7 +58,14 @@ function App({ title, num1, num2, content }) {
   return (
     <>
       <Header />
-      <div className="container mt-3 mb-5">
+
+       <Routes>
+         <Route path='/' element={<Home/>} />
+         <Route path='/about' element={<About/>} />
+         <Route path='/contact' element={<Contact/>} />
+       </Routes>
+      
+      {/* <div className="container mt-3 mb-5">
         <h1 style={{ color: "red", backgroundColor: "pink", padding: "10px" }}>
           {title}
         </h1>
@@ -102,7 +113,7 @@ function App({ title, num1, num2, content }) {
      <br />
      <br />
      <br />
-     <br />
+     <br /> */}
 
       {/* <Footer name="Encoder Technologies" year="2024" /> */}
     </>
