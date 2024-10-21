@@ -8,6 +8,7 @@ import Sidebar from "./components/Sidebar";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import Products from "./components/Products";
 
 function App({ title, num1, num2, content }) {
   let data = {
@@ -63,6 +64,7 @@ function App({ title, num1, num2, content }) {
          <Route path='/' element={<Home/>} />
          <Route path='/about' element={<About/>} />
          <Route path='/contact' element={<Contact/>} />
+         <Route path='/products' element={<Products/>} />
        </Routes>
       
       {/* <div className="container mt-3 mb-5">
