@@ -9,6 +9,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Products from "./components/Products";
+import ProductDetail from "./components/ProductDetail";
 
 function App({ title, num1, num2, content }) {
   let data = {
@@ -65,6 +66,7 @@ function App({ title, num1, num2, content }) {
          <Route path='/about' element={<About/>} />
          <Route path='/contact' element={<Contact/>} />
          <Route path='/products' element={<Products/>} />
+         <Route path='/product-detail/:productId' element={<ProductDetail/>} />
        </Routes>
       
       {/* <div className="container mt-3 mb-5">
