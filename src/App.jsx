@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail";
+import FormHandler from "./components/FormHandler";
 
 function App({ title, num1, num2, content }) {
   let data = {
@@ -67,6 +68,7 @@ function App({ title, num1, num2, content }) {
          <Route path='/contact' element={<Contact/>} />
          <Route path='/products' element={<Products/>} />
          <Route path='/product-detail/:productId' element={<ProductDetail/>} />
+         <Route path="/form" element={<FormHandler />} />
        </Routes>
       
       {/* <div className="container mt-3 mb-5">

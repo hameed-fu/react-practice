@@ -1,0 +1,78 @@
+import React, { useState, useRef } from "react";
+
+const SimpleForm = () => {
+  // useState for controlled inputs
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  // useRef for uncontrolled input
+  const confirmPasswordRef = useRef(null);
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Retrieve the value from the uncontrolled input (confirmPassword)
+    const confirmPassword = confirmPasswordRef.current.value;
+
+    // Simple log to check form data (In production, you may send it to a server)
+    console.log("Form Data:", { name, email, password, confirmPassword });
+
+    // Check if passwords match as a simple validation example
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+    } else {
+      alert("Form submitted successfully!");
+    }
+  };
+
+  return (
+    <div style={{ maxWidth: "400px", margin: "0 auto" }}>
+      <h2>Simple Form</h2>
+      <form onSubmit={handleSubmit}>
+
+        {/* Controlled Input - Name */}
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+
+        {/* Controlled Input - Email */}
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        {/* Controlled Input - Password */}
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        {/* Uncontrolled Input - Confirm Password */}
+        <div>
+          <label>Confirm Password:</label>
+          <input type="password" ref={confirmPasswordRef} />
+        </div>
+
+        {/* Submit Button */}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default SimpleForm;

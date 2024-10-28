@@ -44,6 +44,12 @@ const Header = () => {
                   Products
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/form">
+                  Form Handler
+                </Link>
+              </li>
               
               
             </ul>
