@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import PageTitle from './PageTitle';
 
 function Contact() {
+
+  useEffect(() => {
+    let userMail = localStorage.getItem("userMail");
+    console.log('USer email in contact page')
+    
+  }, []);
+
   return (
-    <div>Contact</div>
+    <div>
+
+      <PageTitle title="Contact Us" />
+      Contact</div>
   )
 }
 

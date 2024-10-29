@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
 import Loader from "./Loader";
+import PageTitle from "./PageTitle";
 
 function Products() {
   //   function getProducts() {
@@ -37,6 +38,8 @@ function Products() {
   
   return (
     <>
+
+<PageTitle title="Products" />
       <div className="container">
         <h1>Products </h1>
 
