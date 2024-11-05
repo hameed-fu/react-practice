@@ -1,0 +1,26 @@
+import React, { useState } from "react";
+
+function ImageUploader() {
+  const [image, setImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+    }
+  };
+
+  return (
+    <div>
+      <input type="file" accept="image/*" onChange={handleImageUpload} />
+      
+      {image && (
+        <div style={{ marginTop: "20px" }}>
+          <img src={image} alt="Uploaded Preview" style={{ width: "200px", height: "auto" }} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default ImageUploader;
