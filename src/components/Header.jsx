@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const count = useSelector((state) => state.counter.value)
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -69,6 +72,7 @@ const Header = () => {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
+              {count}
             </form>
           </div>
         </div>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function Login() {
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
 
   let [user, setUser] = useState("");
-
+  const count = useSelector((state) => state.counter.value)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +42,7 @@ function Login() {
   return (
     <div className="container">
       <h1>
-        
+      {count}
         {user ? <div>Welcome, <button className="btn btn-danger" onClick={logOut}>Logout</button></div> : "Please login"}</h1>
       {user ? (
         "Welcome"
